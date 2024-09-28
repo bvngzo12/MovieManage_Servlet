@@ -29,6 +29,7 @@ nav a {
 <body>
 	<nav>
 		<h1>영화 목록 페이지</h1>
+		<%@ include file = "/nav.jsp" %>
 	</nav>
 	<a href="${root}/movie.do?act=init">메인 화면으로</a>
 	<a href="${root}/movie.do?act=registform">등록하기</a>

@@ -24,6 +24,7 @@ nav a {
 <body>
 	<nav>
 		<h1>영화 등록 페이지</h1>
+		<%@ include file = "/nav.jsp" %>
 	</nav>
 	<form action="${root}/movie.do?act=regist" method="POST">
 		<fieldset>

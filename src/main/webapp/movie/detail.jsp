@@ -9,6 +9,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+nav a {
+	margin-right: 10px
+}
 <script>
 	function update(){
 		document.getElementById("detail").action = "${root}/movie.do?act=update"
@@ -23,13 +33,19 @@
 </script>
 </head>
 <body>
-	<div align="center">
+	<nav>
 		<h1>영화 상세</h1>
-		<form id="detail" action = "" method="post">
+		<%@ include file="/nav.jsp"%>
+	</nav>
+	<div>
+
+
+		<form id="detail" action="" method="post">
 			<table border="1">
 				<tr>
 					<td>영화 코드</td>
-					<td><input type="text" name="code" value="${movie.code}" readonly /></td>
+					<td><input type="text" name="code" value="${movie.code}"
+						readonly /></td>
 				</tr>
 				<tr>
 					<td>영화 제목</td>
@@ -41,16 +57,16 @@
 				</tr>
 				<tr>
 					<th>영화 감독</th>
-					<td><input type="text" name="director" value="${movie.director}" /></td>
+					<td><input type="text" name="director"
+						value="${movie.director}" /></td>
 				</tr>
 				<tr>
 					<th>영화 장르</th>
 					<td><input type="text" name="genre" value="${movie.genre}" /></td>
 				</tr>
 				<tr>
-					<td colspan="2">
-						<input type = "button"  onclick="update()" value="수정"/>
-						<input type = "button"  onclick="remove()" value="삭제"/>
+					<td colspan="2"><input type="button" onclick="update()"
+						value="수정" /> <input type="button" onclick="remove()" value="삭제" />
 					</td>
 				</tr>
 			</table>

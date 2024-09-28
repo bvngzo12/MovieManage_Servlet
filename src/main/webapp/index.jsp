@@ -22,10 +22,11 @@ margin-right: 10px
 <body>
 	<nav>
 		<h1>메인 페이지 입니다.</h1>
+		<%@ include file = "nav.jsp" %>
 	</nav>
 	<a href="${root}/movie.do?act=list">영화 목록
 		페이지</a>
-	<br>
+
 	<br>
 
 </body>
