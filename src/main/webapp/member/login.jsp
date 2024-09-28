@@ -3,12 +3,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <c:set var="root" value="${pageContext.request.contextPath}"></c:set>
 
-<c:set var="id" value=""></c:set>
-
-<c:if test="${cookie.name eq 'idsaved'}">
-	<c:set var="id" value="${cookie.value}"></c:set>
+<c:if test="${cookie.idsaved.value ne null}">
+	<c:set var="id" value = "${cookie.idsaved.value}"></c:set>
 </c:if>
-
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +22,7 @@
 				<tr>
 					<td>아이디</td>
 					<c:if test="${id eq null}">
-						<td><input type="text" name="id" value="" /></td>
+						<td><input type="text" name="id" /></td>
 						<td><input type="checkbox" name="save" /></td>
 					</c:if>
 					<c:if test="${id ne null}">
