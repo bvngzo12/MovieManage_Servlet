@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<c:set var="root" value="${pageContext.request.contextPath}"></c:set>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +25,7 @@ nav a {
 	<nav>
 		<h1>영화 등록 페이지</h1>
 	</nav>
-	<form action="#" method="">
+	<form action="${root}/movie.do?act=regist" method="POST">
 		<fieldset>
 			<label> 영화 코드 <input type="text" name="code"></label> <br>
 			<label> 영화 제목 <input type="text" name="title"></label> <br>
@@ -33,7 +37,7 @@ nav a {
 					<option value="로맨스">로맨스</option>
 			</select>
 			</label> <br> <input type="submit" value="등록"> <br> <a
-				href="#">목록으로</a>
+				href="${root}/movie.do?act=list">목록으로</a>
 		</fieldset>
 	</form>
 </body>

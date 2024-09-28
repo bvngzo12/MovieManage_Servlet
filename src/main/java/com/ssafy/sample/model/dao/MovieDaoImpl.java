@@ -11,11 +11,11 @@ import com.ssafy.sample.dto.Movie;
 import com.ssafy.sample.util.DBUtil;
 
 public class MovieDaoImpl implements MovieDao {
-
+	
 	@Override
 	public List<Movie> selectAll() throws SQLException {
 		Connection conn = DBUtil.getInstance().getConnection();
-		String sql = "select mcode as code, mtitle as title, mtime as time mdirector as director, mgenre as genre from movies";
+		String sql = "select mcode as code, mtitle as title, mtime as time, mdirector as director, mgenre as genre from movies";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 		ResultSet rs = pstmt.executeQuery();
@@ -39,7 +39,7 @@ public class MovieDaoImpl implements MovieDao {
 	@Override
 	public Movie selectByCode(String code) throws SQLException {
 		Connection conn = DBUtil.getInstance().getConnection();
-		String sql = "select mcode as code, mtitle as title, mtime as time mdirector as director, mgenre as genre from movies where mcdoe = ?";
+		String sql = "select mcode as code, mtitle as title, mtime as time, mdirector as director, mgenre as genre from movies where mcode = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, code);
 		ResultSet rs = pstmt.executeQuery();
