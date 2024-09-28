@@ -20,8 +20,8 @@ public class DBUtil {
 	
 	public Connection getConnection() throws SQLException {
 		String url = "jdbc:mysql://127.0.0.1:3306/ssafysample?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8";
-		String user = "ssafy";
-		String pwd = "ssafy";
+		String user = "root";
+		String pwd = "root";
 		return DriverManager.getConnection(url, user, pwd);
 	}
 	
